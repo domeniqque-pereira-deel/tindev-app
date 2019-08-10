@@ -10,8 +10,6 @@ import api from '../services/api';
 export default function Main({ navigation }) {
     const id = navigation.getParam('user');
     const [users, setUsers] = useState([])
-
-    console.log(id)
     
     useEffect(() => {
         async function loadUsers() {
@@ -20,7 +18,7 @@ export default function Main({ navigation }) {
                     user: id
                 }
             });
-            console.log(response.data)
+            
             setUsers(response.data);
         }
 
